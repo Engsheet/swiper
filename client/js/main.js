@@ -41,42 +41,44 @@ const data = [
   },
 ];
 
-const swiper = new Swiper(".swiper", {
-  autoplay: {
-    disableOnInteraction: false,
-  },
-  effect: "coverflow",
-  loop: true,
-  speed: 2000,
-  parallax: true,
-  spaceBetween: 1,
-  loopAdditionalSlides: 1,
-  centeredSlides: true,
-  coverflowEffect: {
-    slideShadows: false, 
-    rotate: 50,
-    stretch: 0,
-    depth: 50,
-    modifier: 1
-  },
-  allowTouchMove: true,
-  pagination: {
-    el: ".pagination",
-    clickable: true,
-    bulletClass: "bullet",
-    bulletActiveClass: "is-active",
-    renderBullet: function (index, className) {
-      return /* html */ `
+window.onload = function () {
+  const swiper = new Swiper(".swiper", {
+    autoplay: {
+      disableOnInteraction: false,
+    },
+    effect: "coverflow",
+    loop: true,
+    speed: 2000,
+    parallax: true,
+    spaceBetween: 1,
+    loopAdditionalSlides: 1,
+    centeredSlides: true,
+    coverflowEffect: {
+      slideShadows: false,
+      rotate: 50,
+      stretch: 0,
+      depth: 50,
+      modifier: 1
+    },
+    allowTouchMove: true,
+    pagination: {
+      el: ".pagination",
+      clickable: true,
+      bulletClass: "bullet",
+      bulletActiveClass: "is-active",
+      renderBullet: function (index, className) {
+        return /* html */ `
         <span class="${className}">
           <img src="./assets/${data[index].src}" alt=""/>
         </span>
       `;
+      },
     },
-  },
-  breakpoints: {
-    768: {
-      slidesPerView: 3,
-      spaceBetween: 30,
-    },
-  }
-});
+    breakpoints: {
+      768: {
+        slidesPerView: 3,
+        spaceBetween: 30,
+      },
+    }
+  });
+};
