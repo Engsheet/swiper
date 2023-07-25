@@ -2,7 +2,7 @@
 
 body {
   height: 120vh;
-  background: url(/client/assets/bunny.jpg) no-repeat center;
+  background: url(./client/assets/bunny.jpg) no-repeat center;
   background-size: cover;
   overflow: hidden;
   box-sizing: border-box;
